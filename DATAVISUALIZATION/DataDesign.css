@@ -1,0 +1,194 @@
+:root {
+    --gold: #c8aa6e;
+    --dark-blue: #091428;
+    --card-bg: rgba(30, 35, 40, 0.95);
+    --win-color: #11b288;
+    --pop-color: #c89b3c;
+    --atk-color: #d13639;
+    --def-color: #2e8b57;
+    --mag-color: #9370db;
+    --text: #f0e6d2;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-image: url('DataVisualBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text);
+    min-height: 100vh;
+}
+
+.overlay {
+    background: rgba(10, 10, 12, 0.85);
+    min-height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h1 {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--gold);
+}
+
+.search-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.search-group label {
+    font-size: 0.8rem;
+    color: var(--gold);
+    text-transform: uppercase;
+}
+
+select {
+    background: var(--dark-blue);
+    border: 1px solid var(--gold);
+    color: var(--text);
+    padding: 10px;
+    width: 200px;
+    border-radius: 4px;
+}
+
+.vs-badge {
+    font-weight: bold;
+    color: var(--gold);
+    font-size: 1.5rem;
+    padding-top: 15px;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.champ-card {
+    background: var(--card-bg);
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.image-section {
+    height: 300px;
+    position: relative;
+    background: #000;
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+.name-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    padding: 20px;
+    text-align: center;
+}
+
+.name-overlay h2 {
+    margin: 0;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.stats-panel {
+    padding: 25px;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.stat-row label {
+    width: 90px;
+    font-size: 0.8rem;
+}
+
+.bar-bg {
+    flex-grow: 1;
+    background: #010a13;
+    height: 10px;
+    margin: 0 15px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    width: 0%;
+    transition: width 0.8s ease-out;
+}
+
+.pop { background: var(--pop-color); }
+.win { background: var(--win-color); }
+.atk { background: var(--atk-color); }
+.def { background: var(--def-color); }
+.mag { background: var(--mag-color); }
+
+.stat-row span {
+    width: 50px;
+    text-align: right;
+    font-size: 0.8rem;
+    font-family: monospace;
+}
+
+.hidden { display: none; }
+
+#placeholder {
+    margin-top: 100px;
+    opacity: 0.5;
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+    .comparison-grid { grid-template-columns: 1fr; }
+    .controls { flex-direction: column; gap: 10px; }
+}

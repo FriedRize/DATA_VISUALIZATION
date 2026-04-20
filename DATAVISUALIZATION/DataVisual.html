@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champion Comparison Tool</title>
+    <link rel="stylesheet" href="DataDesign.css">
+</head>
+<body>
+
+    <div class="overlay">
+        <header>
+            <h1>Champion Comparison</h1>
+            <div class="controls">
+                <div class="search-group">
+                    <label>Champion 1</label>
+                    <select id="select1">
+                        <option value="">Choose Champion</option>
+                    </select>
+                </div>
+                <div class="vs-badge">VS</div>
+                <div class="search-group">
+                    <label>Champion 2</label>
+                    <select id="select2">
+                        <option value="">Choose Champion</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <div class="comparison-grid">
+            <!-- Left Side -->
+            <div id="card1" class="champ-card hidden">
+                <div class="image-section">
+                    <img id="img1" src="" alt="">
+                    <div class="name-overlay"><h2 id="name1"></h2></div>
+                </div>
+                <div class="stats-panel">
+                    <div class="stat-row"><label>Popularity</label><div class="bar-bg"><div id="popBar1" class="bar pop"></div></div><span id="popVal1"></span></div>
+                    <div class="stat-row"><label>Win Rate</label><div class="bar-bg"><div id="winBar1" class="bar win"></div></div><span id="winVal1"></span></div>
+                    <div class="stat-row"><label>Attack</label><div class="bar-bg"><div id="atkBar1" class="bar atk"></div></div><span id="atkVal1"></span></div>
+                    <div class="stat-row"><label>Defense</label><div class="bar-bg"><div id="defBar1" class="bar def"></div></div><span id="defVal1"></span></div>
+                    <div class="stat-row"><label>Magic</label><div class="bar-bg"><div id="magBar1" class="bar mag"></div></div><span id="magVal1"></span></div>
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div id="card2" class="champ-card hidden">
+                <div class="image-section">
+                    <img id="img2" src="" alt="">
+                    <div class="name-overlay"><h2 id="name2"></h2></div>
+                </div>
+                <div class="stats-panel">
+                    <div class="stat-row"><label>Popularity</label><div class="bar-bg"><div id="popBar2" class="bar pop"></div></div><span id="popVal2"></span></div>
+                    <div class="stat-row"><label>Win Rate</label><div class="bar-bg"><div id="winBar2" class="bar win"></div></div><span id="winVal2"></span></div>
+                    <div class="stat-row"><label>Attack</label><div class="bar-bg"><div id="atkBar2" class="bar atk"></div></div><span id="atkVal2"></span></div>
+                    <div class="stat-row"><label>Defense</label><div class="bar-bg"><div id="defBar2" class="bar def"></div></div><span id="defVal2"></span></div>
+                    <div class="stat-row"><label>Magic</label><div class="bar-bg"><div id="magBar2" class="bar mag"></div></div><span id="magVal2"></span></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="placeholder">Select two champions to begin comparison</div>
+    </div>
+
+    <script src="Datajava.js"></script>
+</body>
+</html>
